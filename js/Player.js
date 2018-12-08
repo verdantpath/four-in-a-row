@@ -11,7 +11,13 @@ class Player {
   * @param {number} num - Numberof token objects to be created
   * @returns {Array} An array of the newly created token objects
   */
-  createTokens() {
+  createTokens(num) {
+    const tokens = [];
 
+    for(var i = 0; i < num; i++) {
+      let token = new Token(i, this);
+      tokens.push(token);
+    }
+    return tokens;
   }
 }
