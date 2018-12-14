@@ -2,7 +2,7 @@ class Board {
   constructor() {
     this.rows = 6;
     this.columns = 7;
-    this.spaces = createSpaces();
+    this.spaces = this.createSpaces();
   }
 /**
  * Generates 2D array of spaces.
