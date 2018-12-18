@@ -43,9 +43,44 @@ class Game {
       } else if (e.key === "ArrowRight") {
         this.activePlayer.activeToken.moveRight(this.board.columns);
       } else if (e.key === "ArrowDown") {
-        // play token
+        this.playToken();
       }
     }
   }
 
+  /**
+   * Finds Space object to drop Token into, drops Token
+   */
+   playToken() {
+     let spaces = this.board.spaces;
+     let activeToken = this.activePlayer.activeToken;
+     let targetColumn = spaces[activeToken.columnLocation];
+     let targetSpace = null;
+
+     for(let space of targetColumn) {
+       if(space.token === null) {
+         targetSpace = space;
+       }
+     }
+
+     if(targetSpace !== null) {
+       game.ready = false;
+       activeToken.drop(targetSpace);
+     }
+   }
+
+   /**
+    * Checks if there is a winner on the board after each token drop.
+    * @param {Object} Targeted space for dropped token.
+    * @return {boolean} Boolean value indicating whether the game has been won (true) or not (false).
+    */
+    checkForWin(target) {
+      const owner = target.token.owner;
+      let win = false;
+
+      //  vertical
+      for(let x = 0; x < this.board.columns; x++;) {
+        
+      }
+    }
 }
