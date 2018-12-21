@@ -146,8 +146,8 @@ class Game {
     * @param {string} message = Game over message.
     */
     gameOver(message) {
-      document.getElementById('game-over').style.display = 'block');
-      document.getElemntById('game-over').textContent = message;
+      document.getElementById('game-over').style.display = 'block';
+      document.getElementById('game-over').textContent = message;
     }
 
     /**
